@@ -1,6 +1,16 @@
 "use strict";
 const { Model, Op } = require("sequelize");
-module.ex
+module.exports = (sequelize, DataTypes) => {
+  class Options extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static createOption({ option, questionId }) {
+      let createOption = this.create({
+        option,
+        questionId,
       });
       return createOption;
     }
