@@ -1,7 +1,14 @@
 "use strict";
 
 /** @type {import('sequelize-cli').Migration} */
-module.expor
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.addColumn("questions", "electionId", {
+      type: Sequelize.DataTypes.INTEGER,
+    });
+
+    await queryInterface.addConstraint("questions", {
+      fields: ["electionId"],
       type: "foreign key",
       references: {
         table: "Elections",
