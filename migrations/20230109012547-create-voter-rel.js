@@ -1,6 +1,15 @@
 ("use strict");
 /** @type {import('sequelize-cli').Migration} */
-modu
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable("VoterRels", {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
+      voterid: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
