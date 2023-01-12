@@ -7,10 +7,6 @@ module.exports = {
       type: Sequelize.DataTypes.INTEGER,
     });
 
-    await queryInterface.addConstraint("VoterRels", {
-      fields: ["electionId"],
-      type: "foreign key",
-      references: {
         table: "Elections",
         field: "id",
       },
