@@ -1,6 +1,14 @@
 "use strict";
 /** @type {import('sequelize-cli').Migration} */
-module.e
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable("questions", {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
       questionname: {
         type: Sequelize.STRING,
         allowNull: false,
